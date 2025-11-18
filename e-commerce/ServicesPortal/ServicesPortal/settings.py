@@ -22,7 +22,7 @@ Static_dir=os.path.join(BASE_DIR, 'Static')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%s#8!3tu+xb1zjp2h_o=asj$a#7l&_g(7fw+q25zf8ek3s8fa7'
-SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key-for-development')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'jy81k!(99fob-jbc$zjvt$f%+u4p1b1*7^^b9p+u*xa*-^^7cb')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
