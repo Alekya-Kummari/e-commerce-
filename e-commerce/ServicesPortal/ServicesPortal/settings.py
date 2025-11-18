@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import logging
+logging.basicConfig(level=logging.DEBUG)
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -21,18 +23,13 @@ Static_dir=os.path.join(BASE_DIR, 'Static')
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%s#8!3tu+xb1zjp2h_o=asj$a#7l&_g(7fw+q25zf8ek3s8fa7'
-SECRET_KEY = os.environ.get('SECRET_KEY', 'jy81k!(99fob-jbc$zjvt$f%+u4p1b1*7^^b9p+u*xa*-^^7cb')
+SECRET_KEY = 'django-insecure-temporary-key-for-debugging-12345'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    'e-commerce-pro-c9n7.cnrsmddx.com',
-    'e-commerce-pro-cbn7.onrender.com', 
-    'localhost', 
-    '127.0.0.1'
-]
+ALLOWED_HOSTS = ['*']
+
 
 # Application definition
 
@@ -126,7 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=[os.path.join(BASE_DIR, 'Static'),]
+# STATICFILES_DIRS=[os.path.join(BASE_DIR, 'Static'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
