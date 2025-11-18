@@ -22,12 +22,17 @@ Static_dir=os.path.join(BASE_DIR, 'Static')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%s#8!3tu+xb1zjp2h_o=asj$a#7l&_g(7fw+q25zf8ek3s8fa7'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'your-default-secret-key-for-development')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.on render.com','localhost','127.0.0.1']
-
+ALLOWED_HOSTS = [
+    'e-commerce-pro-c9n7.cnrsmddx.com',
+    'e-commerce-pro-cbn7.onrender.com', 
+    'localhost', 
+    '127.0.0.1'
+]
 
 # Application definition
 
