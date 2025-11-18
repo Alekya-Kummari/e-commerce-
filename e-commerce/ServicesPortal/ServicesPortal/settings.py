@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 Template_Dir=os.path.join(BASE_DIR, 'Templates')
@@ -23,9 +24,9 @@ Static_dir=os.path.join(BASE_DIR, 'Static')
 SECRET_KEY = '%s#8!3tu+xb1zjp2h_o=asj$a#7l&_g(7fw+q25zf8ek3s8fa7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','192.168.243.161']
+ALLOWED_HOSTS = ['.on render.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'ServicesPortal.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': { 
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
@@ -121,3 +122,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[Static_dir]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Add this
+    # ... other middleware
+]
